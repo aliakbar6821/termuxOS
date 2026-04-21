@@ -53,7 +53,7 @@ Before installing, make sure the following are in place:
 Copy and paste this single command into your Termux terminal:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/aliakbar6821/termuxOS/main/install.sh | bash
+curl -sL https://raw.githubusercontent.com/aliakbar6821/termuxOS/main/install.sh -o install.sh && bash install.sh
 ```
 
 > **⚠️ Important:** After installation completes, fully close Termux (type `exit` or swipe it away from recents) and reopen it. The theme only activates on a fresh session.
