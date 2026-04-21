@@ -7,9 +7,12 @@ echo -e "\e[1;36m==============================\e[0m"
 echo -e "\e[1;32m  Welcome to termuxOS Installer \e[0m"
 echo -e "\e[1;36m==============================\e[0m"
 
-# Fix for curl | bash - Force input from terminal
-read -p "Enter your desired Username: " input_user < /dev/tty
-read -p "Enter your desired Hostname (Device Name): " input_host < /dev/tty
+# Safe interactive input — works with both direct run and curl | bash
+# -p flag is suppressed when stdin is redirected, so we print the prompt manually to /dev/tty
+printf "Enter your desired Username: " > /dev/tty
+read input_user < /dev/tty
+printf "Enter your desired Hostname (Device Name): " > /dev/tty
+read input_host < /dev/tty
 
 # 1. Create the configuration directory and file
 mkdir -p ~/.termuxOS
